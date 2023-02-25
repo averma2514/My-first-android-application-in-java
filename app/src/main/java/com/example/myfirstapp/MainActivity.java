@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
-    private TextView textview;
+    Button button;
+    TextView textview;
     private EditText editText;
 
     @Override
@@ -24,13 +24,11 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         textview = findViewById(R.id.textView);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Editable data = editText.getText();
-                Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
+        button.setOnClickListener(view -> {
+            Editable data = editText.getText();
+            Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
 
-            }
-        });
+        }
+        );
     }
 }
